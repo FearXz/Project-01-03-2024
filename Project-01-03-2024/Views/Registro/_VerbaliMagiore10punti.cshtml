@@ -1,22 +1,21 @@
 ﻿@model IEnumerable<Project_01_03_2024.Models.Verbale>
 
-<h2 class="mb-3">Verbali Importo > 10 punti</h2>
+<h2 class="mb-3">Punti Decurtati > 10 punti</h2>
 
 
 <ul class="list-group mb-5">
-
     <li class="list-group-item">
         <div class="row">
             <div class="col-3">
                 Nominativo
             </div>
-            <div class="col-auto">
+            <div class="col-3">
                 Importo
             </div>
-            <div class="col-auto">
+            <div class="col-3">
                 Data Violazione
             </div>
-            <div class="col-auto">
+            <div class="col-3">
                 Punti Decurtati
             </div>
         </div>
@@ -29,13 +28,13 @@
                 <div class="col-3">
                     @Html.DisplayFor(modelItem => item.Cognome) @Html.DisplayFor(modelItem => item.Nome)
                 </div>
-                <div class="col-auto">
+                <div class="col-3">
                     @Html.DisplayFor(modelItem => item.Importo)
                 </div>
-                <div class="col-auto">
-                    @Html.DisplayFor(modelItem => item.DataViolazione)
+                <div class="col-3">
+                    @item.DataViolazione.ToString("dd/MM/yyyy")
                 </div>
-                <div class="col-auto">
+                <div class="col-3">
                     @Html.DisplayFor(modelItem => item.PuntiDecurtati)
                 </div>
             </div>

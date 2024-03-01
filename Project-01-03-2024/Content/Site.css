@@ -1,8 +1,20 @@
 ﻿/* Set padding to keep content from hitting the edges */
+body {
+
+    background-color: #171717;
+    color: white;
+}
+
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #171717;
+    color: white;
+}
+table {
+    background-color: #171717!important;
+    color: white!important;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -19,4 +31,16 @@ textarea {
     max-width: 280px;
 }
 
+.imgCarousel {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
 
+#hero {
+    background-image: url(https://template68189.motopreview.com/mt-demo/68100/68189/mt-content/uploads/2018/06/mt-1505-content-bg-1.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}

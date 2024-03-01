@@ -8,36 +8,36 @@
         <button type="button" class="btn btn-primary" id="tipoViolazioniBtn">Tipo Violazioni</button>
         <button type="button" class="btn btn-primary" id="totaleVerbaliPerUtenteBtn">Totale Verbali Per Utente</button>
         <button type="button" class="btn btn-primary" id="totalePuntiDecurtatiPerUtenteBtn">Totale Punti Decurtati</button>
-        <button type="button" class="btn btn-primary" id="verbailiMaggiore400Btn">Tipo Violazioni</button>
-        <button type="button" class="btn btn-primary" id="verbailiMaggiore10Btn">Tipo Violazioni</button>
+        <button type="button" class="btn btn-primary" id="verbailiMaggiore400Btn">Importo > 400</button>
+        <button type="button" class="btn btn-primary" id="verbailiMaggiore10Btn">Punti > 10</button>
     </div>
 </div>
 
 
-<div id="tipoViolazioniContainer" class="container isActive">
+<div id="tipoViolazioniContainer" class="container isActive" style="display:none">
 
     @{
         Html.RenderAction("_ListaViolazioni", "Registro");
     }
 </div>
 
-<div id="totaleVerbaliPerUtenteContainer" class="container isActive">
+<div id="totaleVerbaliPerUtenteContainer" class="container isActive" style="display:none">
     @{
         Html.RenderAction("_TotaleVerbaliPerUtente", "Registro");
     }
 </div>
 
-<div id="totalePuntiDecurtatiPerUtenteContainer" class="container isActive">
+<div id="totalePuntiDecurtatiPerUtenteContainer" class="container isActive" style="display:none">
     @{
         Html.RenderAction("_TotalePuntiDecurtatiPerUtente", "Registro");
     }
 </div>
-<div id="verbailiMaggiore400Container" class="container isActive">
+<div id="verbailiMaggiore400Container" class="container isActive" style="display:none">
     @{
         Html.RenderAction("_VerbaliMaggiore400", "Registro");
     }
 </div>
-<div id="verbailiMaggiore10Container" class="container isActive">
+<div id="verbailiMaggiore10Container" class="container isActive" style="display:none">
     @{
         Html.RenderAction("_VerbaliMagiore10punti", "Registro");
     }
@@ -59,7 +59,6 @@
             $("#totaleVerbaliPerUtenteBtn").click(function () {
                 handleAllActive("#totaleVerbaliPerUtenteBtn", "#totaleVerbaliPerUtenteContainer");
             });
-
             $("#totalePuntiDecurtatiPerUtenteBtn").click(function () {
                 handleAllActive("#totalePuntiDecurtatiPerUtenteBtn", "#totalePuntiDecurtatiPerUtenteContainer");
             });

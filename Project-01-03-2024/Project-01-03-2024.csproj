@@ -128,6 +128,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Connection.cs" />
+    <Compile Include="Models\DbAnagrafica.cs" />
+    <Compile Include="Models\DbVerbale.cs" />
     <Compile Include="Models\Utente.cs" />
     <Compile Include="Models\Verbale.cs" />
     <Compile Include="Models\Violazione.cs" />

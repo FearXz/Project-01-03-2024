@@ -47,11 +47,12 @@ namespace Project_01_03_2024.Controllers
                         }
                         conn.Close();
                     }
-                    return RedirectToAction("Index", "Home");
+                    ViewBag.MessageSi = "Utente Registrato con Successo";
+                    return View();
                 }
                 else
                 {
-                    ViewBag.Message = "Utente già registrato";
+                    ViewBag.MessageNo = "Utente già registrato";
                     return View();
                 }
             }
