@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Project_01_03_2024.Models.Violazione>
+
+<h2 class="mb-3">Lista Violazioni</h2>
+
+<ul class="list-group mb-5">
+
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">@Html.DisplayFor(modelItem => item.IdViolazione) - @Html.DisplayFor(modelItem => item.Descrizione)</li>
+    }
+
+</ul>
+

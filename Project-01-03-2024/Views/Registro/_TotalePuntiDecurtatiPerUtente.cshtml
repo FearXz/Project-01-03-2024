@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Project_01_03_2024.Models.Verbale>
+
+<h2 class="mb-3">Totale Punti Decurtati Per Utente</h2>
+
+
+<ul class="list-group mb-5">
+
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-3">
+                Nominativo
+            </div>
+            <div class="col-auto">
+                Totale Punti Decurtati
+            </div>
+        </div>
+    </li>
+
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-3">
+                    @Html.DisplayFor(modelItem => item.Cognome) @Html.DisplayFor(modelItem => item.Nome)
+                </div>
+                <div class="col-auto">
+                    @Html.DisplayFor(modelItem => item.PuntiDecurtati)
+                </div>
+            </div>
+        </li>
+    }
+
+</ul>

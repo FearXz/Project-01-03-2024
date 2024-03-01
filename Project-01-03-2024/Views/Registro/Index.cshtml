@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Registro</h2>
+<div class="container d-flex justify-content-center mb-3">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" id="tipoViolazioniBtn">Tipo Violazioni</button>
+        <button type="button" class="btn btn-primary" id="totaleVerbaliPerUtenteBtn">Totale Verbali Per Utente</button>
+        <button type="button" class="btn btn-primary" id="totalePuntiDecurtatiPerUtenteBtn">Totale Punti Decurtati</button>
+        <button type="button" class="btn btn-primary" id="verbailiMaggiore400Btn">Tipo Violazioni</button>
+        <button type="button" class="btn btn-primary" id="verbailiMaggiore10Btn">Tipo Violazioni</button>
+    </div>
+</div>
+
+
+<div id="tipoViolazioniContainer" class="container isActive">
+
+    @{
+        Html.RenderAction("_ListaViolazioni", "Registro");
+    }
+</div>
+
+<div id="totaleVerbaliPerUtenteContainer" class="container isActive">
+    @{
+        Html.RenderAction("_TotaleVerbaliPerUtente", "Registro");
+    }
+</div>
+
+<div id="totalePuntiDecurtatiPerUtenteContainer" class="container isActive">
+    @{
+        Html.RenderAction("_TotalePuntiDecurtatiPerUtente", "Registro");
+    }
+</div>
+<div id="verbailiMaggiore400Container" class="container isActive">
+    @{
+        Html.RenderAction("_VerbaliMaggiore400", "Registro");
+    }
+</div>
+<div id="verbailiMaggiore10Container" class="container isActive">
+    @{
+        Html.RenderAction("_VerbaliMagiore10punti", "Registro");
+    }
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script>
+        $(document).ready(function () {
+            hideIsActive();
+
+            $("#tipoViolazioniBtn").click(function () {
+                handleAllActive("#tipoViolazioniBtn", "#tipoViolazioniContainer");
+            });
+            $("#totaleVerbaliPerUtenteBtn").click(function () {
+                handleAllActive("#totaleVerbaliPerUtenteBtn", "#totaleVerbaliPerUtenteContainer");
+            });
+
+            $("#totalePuntiDecurtatiPerUtenteBtn").click(function () {
+                handleAllActive("#totalePuntiDecurtatiPerUtenteBtn", "#totalePuntiDecurtatiPerUtenteContainer");
+            });
+            $("#verbailiMaggiore400Btn").click(function () {
+                handleAllActive("#verbailiMaggiore400Btn", "#verbailiMaggiore400Container");
+            });
+            $("#verbailiMaggiore10Btn").click(function () {
+                handleAllActive("#verbailiMaggiore10Btn", "#verbailiMaggiore10Container");
+            });
+
+            function btnRemoveActive() {
+                $(".btn").removeClass("active");
+            }
+            function hideIsActive() {
+                $(".isActive").hide();
+            }
+            function handleAllActive(IdButton, IdContainer) {
+                hideIsActive();
+                btnRemoveActive();
+                $(IdButton).addClass("active");
+                $(IdContainer).fadeIn();
+            }
+        });
+    </script>
+
+}
