@@ -1,4 +1,5 @@
 ﻿using Project_01_03_2024.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Mvc;
 
@@ -8,7 +9,8 @@ namespace Project_01_03_2024.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("RegistraUtente");
+            List<Utente> listaUtenti = GetUtenteList();
+            return View(listaUtenti);
         }
 
         public ActionResult RegistraUtente()
@@ -95,5 +97,40 @@ namespace Project_01_03_2024.Controllers
             }
             return null;
         }
+        private List<Utente> GetUtenteList()
+        {
+            List<Utente> listaUtenti = new List<Utente>();
+
+            using (SqlConnection conn = Connection.GetConn())
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM ANAGRAFICA";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Utente utente = new Utente();
+
+                            utente.IdUtente = reader.GetInt32(0);
+                            utente.Cognome = reader.GetString(1);
+                            utente.Nome = reader.GetString(2);
+                            utente.Indirizzo = reader.GetString(3);
+                            utente.Citta = reader.GetString(4);
+                            utente.CAP = reader.GetString(5);
+                            utente.CodiceFiscale = reader.GetString(6);
+
+                            listaUtenti.Add(utente);
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return listaUtenti;
+        }
+
     }
 }

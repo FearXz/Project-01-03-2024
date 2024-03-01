@@ -9,7 +9,8 @@ namespace Project_01_03_2024.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("NuovoVerbale");
+            List<Verbale> listaVerbali = GetListaVerbali();
+            return View(listaVerbali);
         }
 
         public ActionResult NuovoVerbale()
@@ -122,5 +123,46 @@ namespace Project_01_03_2024.Controllers
             }
             return listaUtenti;
         }
+        private List<Verbale> GetListaVerbali()
+        {
+            List<Verbale> listaVerbali = new List<Verbale>();
+
+            using (SqlConnection conn = Connection.GetConn())
+            {
+                conn.Open();
+
+                string query = "SELECT v.IdVerbale,a.IdAnagrafica,a.Nome,a.Cognome,v.IdViolazione,t.Descrizione,v.DataViolazione,v.IndirizzoViolazione,v.Nominativo_Agente,v.DataTrascrizioneVerbale,v.Importo,v.DecurtamentoPunti FROM VERBALE AS V INNER JOIN ANAGRAFICA AS A ON A.IdAnagrafica=V.IdAnagrafica INNER JOIN TIPO_VIOLAZIONE AS T ON T.IdViolazione = V.IdViolazione";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Verbale newVerbale = new Verbale
+                            {
+                                IdVerbale = reader.GetInt32(0),
+                                IdUtente = reader.GetInt32(1),
+                                Nome = reader.GetString(2),
+                                Cognome = reader.GetString(3),
+                                IdViolazione = reader.GetInt32(4),
+                                Descrizione = reader.GetString(5),
+                                DataViolazione = reader.GetDateTime(6),
+                                IndirizzoViolazione = reader.GetString(7),
+                                NomeAgente = reader.GetString(8),
+                                DataTrascrizione = reader.GetDateTime(9),
+                                Importo = reader.GetDecimal(10),
+                                PuntiDecurtati = reader.GetInt32(11)
+                            };
+                            listaVerbali.Add(newVerbale);
+                        }
+                    }
+                }
+                conn.Close();
+            }
+            return listaVerbali;
+
+        }
+
     }
 }

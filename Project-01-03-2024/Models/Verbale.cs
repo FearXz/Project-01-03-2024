@@ -10,6 +10,7 @@ namespace Project_01_03_2024.Models
         public int IdUtente { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
+        public string NomeCompleto => $"{Nome} {Cognome}";
         [Display(Name = "Tipo Di Violazione")]
         public int IdViolazione { get; set; }
         public string Descrizione { get; set; }

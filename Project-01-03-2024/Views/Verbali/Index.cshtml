@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Project_01_03_2024.Models.Verbale>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Verbali</h2>
+
+<p>
+    @Html.ActionLink("Registra Verbale", "NuovoVerbale", new { area = "" }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoViolazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeAgente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataTrascrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importo)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCompleto)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeAgente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTrascrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importo)
+        </td>
+    </tr>
+}
+
+</table>
