@@ -50,6 +50,10 @@ namespace Project_01_03_2024.Controllers
                     }
                     conn.Close();
                 }
+
+                ViewBag.ListaTipoViolazioni = GetListaTipoViolazioni();
+                ViewBag.ListaUtenti = GetListaUtenti();
+                TempData["message"] = "Verbale inserito correttamente";
                 return RedirectToAction("Index", "Verbali");
             }
             else

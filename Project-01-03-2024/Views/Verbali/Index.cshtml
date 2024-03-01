@@ -2,6 +2,12 @@
 
 @{
     ViewBag.Title = "Index";
+    if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
 }
 
 <h2>Lista Verbali</h2>
@@ -34,31 +40,44 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeCompleto)
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCompleto)
+            </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Descrizione)
-        </td>
-        <td>
-            @item.DataViolazione.ToString("dd/MM/yyyy")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeAgente)
-        </td>
-        <td>
-            @item.DataTrascrizione.ToString("dd/MM/yyyy")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Importo)
-        </td>
-    </tr>
-}
+            <td>
+                @Html.DisplayFor(modelItem => item.Descrizione)
+            </td>
+            <td>
+                @item.DataViolazione.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndirizzoViolazione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAgente)
+            </td>
+            <td>
+                @item.DataTrascrizione.ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Importo)
+            </td>
+        </tr>
+    }
 
 </table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('.alert').fadeOut('slow');
+            }, 3000);
+        });
+    </script>
+
+}
