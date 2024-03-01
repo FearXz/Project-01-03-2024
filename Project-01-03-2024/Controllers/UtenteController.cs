@@ -12,12 +12,11 @@ namespace Project_01_03_2024.Controllers
             List<Utente> listaUtenti = GetUtenteList();
             return View(listaUtenti);
         }
-
         public ActionResult RegistraUtente()
         {
             return View();
         }
-
+        // RegistraUtente è un metodo che permette di inserire un nuovo utente nel database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult RegistraUtente(Utente utente)
@@ -62,7 +61,7 @@ namespace Project_01_03_2024.Controllers
             }
 
         }
-
+        // CheckUtente è un metodo che permette di verificare se un utente è già presente nel database
         private Utente CheckUtente(Utente utente)
         {
             Utente nuovoUtente = new Utente();
@@ -98,6 +97,7 @@ namespace Project_01_03_2024.Controllers
             }
             return null;
         }
+        // GetUtenteList è un metodo che permette di ottenere la lista degli utenti presenti nel database
         private List<Utente> GetUtenteList()
         {
             List<Utente> listaUtenti = new List<Utente>();

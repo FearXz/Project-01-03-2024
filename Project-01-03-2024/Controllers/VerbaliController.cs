@@ -12,7 +12,7 @@ namespace Project_01_03_2024.Controllers
             List<Verbale> listaVerbali = GetListaVerbali();
             return View(listaVerbali);
         }
-
+        // NuovoVerbale usa i metodi GetListaTipoViolazioni e GetListaUtenti per popolare le dropdownlist
         public ActionResult NuovoVerbale()
         {
             ViewBag.ListaTipoViolazioni = GetListaTipoViolazioni();
@@ -20,7 +20,7 @@ namespace Project_01_03_2024.Controllers
 
             return View();
         }
-
+        //NuovoVerbale  [httpPost] inserisce un nuovo verbale nel database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult NuovoVerbale(Verbale verbale)
@@ -61,7 +61,7 @@ namespace Project_01_03_2024.Controllers
                 return View();
             }
         }
-
+        // GetListaTipoViolazioni restituisce una lista di oggetti TipoViolazione
         private List<Verbale> GetListaTipoViolazioni()
         {
             List<Verbale> listaTipoViolazioni = new List<Verbale>();
@@ -91,7 +91,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaTipoViolazioni;
         }
-
+        // GetListaUtenti restituisce una lista di oggetti Utente
         private List<Utente> GetListaUtenti()
         {
             List<Utente> listaUtenti = new List<Utente>();
@@ -126,6 +126,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaUtenti;
         }
+        // GetListaVerbali restituisce una lista di oggetti Verbale
         private List<Verbale> GetListaVerbali()
         {
             List<Verbale> listaVerbali = new List<Verbale>();

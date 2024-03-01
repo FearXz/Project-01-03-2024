@@ -7,40 +7,47 @@ namespace Project_01_03_2024.Controllers
 {
     public class RegistroController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
         }
+        // _ListaViolazioni ritorna la lista delle violazioni 
         public ActionResult _ListaViolazioni()
         {
             List<Violazione> listaViolazioni = GetViolazioni();
 
             return PartialView(listaViolazioni);
         }
+        // _TotaleVerbaliPerUtente ritorna il totale dei verbali per utente
         public ActionResult _TotaleVerbaliPerUtente()
         {
             List<Verbale> listaTotaleVerbaliPerUtente = GetTotaleVerbaliPerUtente();
 
             return PartialView(listaTotaleVerbaliPerUtente);
         }
+        // _TotalePuntiDecurtatiPerUtente ritorna il totale dei punti decurtati per utente
         public ActionResult _TotalePuntiDecurtatiPerUtente()
         {
             List<Verbale> listaTotalePuntiDecurtatiPerUtente = GetTotalePuntiDecurtatiPerUtente();
 
             return PartialView(listaTotalePuntiDecurtatiPerUtente);
         }
+        // _VerbaliMaggiore400 ritorna i verbali con importo maggiore di 400
         public ActionResult _VerbaliMaggiore400()
         {
             List<Verbale> listaVerbaliMaggiore400 = GetVerbaliMaggiore400();
 
             return PartialView(listaVerbaliMaggiore400);
         }
+        // _VerbaliMagiore10punti ritorna i verbali con punti decurtati maggiori di 10
         public ActionResult _VerbaliMagiore10punti()
         {
             List<Verbale> listaVerbaliMaggiore10punti = GetVerbaliMaggiore10punti();
 
             return PartialView(listaVerbaliMaggiore10punti);
         }
+        // GetViolazioni ritorna la lista delle violazioni
         private List<Violazione> GetViolazioni()
         {
             List<Violazione> listaViolazioni = new List<Violazione>();
@@ -68,6 +75,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaViolazioni;
         }
+        // GetTotaleVerbaliPerUtente ritorna il totale dei verbali per utente
         private List<Verbale> GetTotaleVerbaliPerUtente()
         {
             List<Verbale> listaTotaleVerbaliPerUtente = new List<Verbale>();
@@ -96,6 +104,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaTotaleVerbaliPerUtente;
         }
+        // GetTotalePuntiDecurtatiPerUtente ritorna il totale dei punti decurtati per utente
         private List<Verbale> GetTotalePuntiDecurtatiPerUtente()
         {
             List<Verbale> listaTotalePuntiDecurtatiPerUtente = new List<Verbale>();
@@ -124,6 +133,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaTotalePuntiDecurtatiPerUtente;
         }
+        // GetVerbaliMaggiore400 ritorna i verbali con importo maggiore di 400
         private List<Verbale> GetVerbaliMaggiore400()
         {
             List<Verbale> listaVerbaliMaggiore400 = new List<Verbale>();
@@ -153,6 +163,7 @@ namespace Project_01_03_2024.Controllers
             }
             return listaVerbaliMaggiore400;
         }
+        // GetVerbaliMaggiore10punti ritorna i verbali con punti decurtati maggiori di 10
         private List<Verbale> GetVerbaliMaggiore10punti()
         {
             List<Verbale> listaVerbaliMaggiore10punti = new List<Verbale>();
