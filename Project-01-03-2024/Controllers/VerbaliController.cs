@@ -50,11 +50,10 @@ namespace Project_01_03_2024.Controllers
                     }
                     conn.Close();
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Verbali");
             }
             else
             {
-                ViewBag.Message = "Verbale già registrato";
                 return View();
             }
         }
