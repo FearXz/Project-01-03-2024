@@ -44,3 +44,6 @@ textarea {
     background-size: cover;
     height: 500px;
 }
+.bg-dark {
+    background-color: #171717;
+}

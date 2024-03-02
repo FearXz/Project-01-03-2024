@@ -4,56 +4,97 @@
 
 <main>
 
-        <div class="row">
-            <div class="col-12  text-center fs-1 fw-bold">
-                <h1 class="text-center">POLIZIA DI STATO</h1>
-                <h2 class="">Al servizio del Paese</h2>
+    <div class="row">
+        <div class="col-12  text-center fs-1 fw-bold">
+            <h1 class="text-center">POLIZIA DI STATO</h1>
+            <h2 class="">Al servizio del Paese</h2>
+        </div>
+
+        <div class="col-12 mb-5">
+            <div id="hero" class="text-white fw-bold fs-1 d-flex flex-column justify-content-center g-5">
+                <div class="p-5">
+                    <h2 class="h1 mb-4">ITALIA</h2>
+                    <h2 class="h1 mb-4">Polizia di stato</h2>
+                    <h3 class="h3 mb-4">Siamo impegnati a fornire il più alto grado di servizi di polizia professionale nella città.</h3>
+                    <!-- Button trigger modal -->
+                    <button id="rickRoll" type="button" class="btn btn-danger rounded-0 p-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Request a Callback
+                    </button>
+                </div>
             </div>
 
-            <div class="col-12 mb-5">
-                <div id="hero" class="text-white fw-bold fs-1 d-flex flex-column justify-content-center g-5">
-                    <div class="p-5">
-                        <h2 class="h1 mb-4">ITALIA</h2>
-                        <h2 class="h1 mb-4">Polizia di stato</h2>
-                        <h3 class="h3 mb-4">Siamo impegnati a fornire il più alto grado di servizi di polizia professionale nella città.</h3>
-                        <button class="btn btn-danger rounded-0 p-3">Request a Callback</button>
+        </div>
+
+        <div class="col-12 mb-5">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+
+                        <img src="https://wallpapers.com/images/hd/speeding-ford-police-interceptor-s7nbuea8bu1byay7.jpg" class="imgCarousel d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>The best police in the world</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://e1.pxfuel.com/desktop-wallpaper/60/12/desktop-wallpaper-police-on-dog-american-police.jpg" class="imgCarousel d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>We have car sweeesh</h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://wallpaperswide.com/download/dodge_charger_pursuit_2011-wallpaper-1920x1200.jpg" class="d-block w-100 imgCarousel" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Non ho voglia di inventare del testo</h1>
+                        </div>
                     </div>
                 </div>
-
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+        </div>
+    </div>
 
-            <div class="col-12 mb-5">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
 
-                            <img src="https://wallpapers.com/images/hd/speeding-ford-police-interceptor-s7nbuea8bu1byay7.jpg" class="imgCarousel d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h1>The best police in the world</h1>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://e1.pxfuel.com/desktop-wallpaper/60/12/desktop-wallpaper-police-on-dog-american-police.jpg" class="imgCarousel d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h1>We have car sweeesh</h1>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://wallpaperswide.com/download/dodge_charger_pursuit_2011-wallpaper-1920x1200.jpg" class="d-block w-100 imgCarousel" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h1>Non ho voglia di inventare del testo</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                </div>
+                <div class="modal-body">
+                    <img src="~/Assets/rickRoll.gif" class="w-100" />
+                </div>
+                <div class="modal-footer">
+                    <button id="closeStop" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
+    <audio src="~/Assets/rickRoll.mp3"></audio>
+
 </main>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            const audio = new Audio("/Assets/rickRoll.mp3");
+
+            $("#rickRoll").click(function () {
+                audio.play();
+            });
+            $("#closeStop").click(function () {
+                audio.pause();
+                audio.currentTime = 0;
+            })
+
+        });
+    </script>
+}
