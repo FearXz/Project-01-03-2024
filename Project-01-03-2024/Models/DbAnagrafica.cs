@@ -1,4 +1,6 @@
-﻿namespace Project_01_03_2024.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Project_01_03_2024.Models
 {
     public class DbAnagrafica
     {
@@ -8,6 +10,8 @@
         public string Indirizzo { get; set; }
         public string Citta { get; set; }
         public string CAP { get; set; }
+
+        [StringLength(16, MinimumLength = 16)]
         public string CodiceFiscale { get; set; }
     }
 }

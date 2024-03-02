@@ -76,12 +76,16 @@
                 $(".isActive").hide();
             }
             function handleAllActive(IdButton, IdContainer) {
-                hideIsActive();
-                btnRemoveActive();
-                $(IdButton).addClass("active");
-                $(IdContainer).fadeIn();
+                if ($(IdButton).hasClass("active")) {
+                    hideIsActive();
+                    btnRemoveActive();
+                } else {
+                    hideIsActive();
+                    btnRemoveActive();
+                    $(IdButton).addClass("active");
+                    $(IdContainer).fadeIn();
+                }
             }
         });
     </script>
-
 }
